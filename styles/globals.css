@@ -91,10 +91,12 @@ h1 {
 button {
   border: none;
   width: 100%;
-  height: 36px;
+  height: 50px;
   font-size: 18px;
   font-weight: 600;
   background: blanchedalmond;
+  margin-bottom:12px;
+  border-radius: 4px;
 }
 
 .game__setup {
