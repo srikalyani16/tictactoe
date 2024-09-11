@@ -33,7 +33,7 @@ export default function Home() {
   const [isComputer, setIsComputer] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [isPlayerTurn, setIsPlayerTurn] = useState(true);
-  const [buttonText,setButtonText]=useState('');
+  const [buttonText,setButtonText]=useState('New Game');
 
   // Player names
   const [playerX, setPlayerX] = useState("");
