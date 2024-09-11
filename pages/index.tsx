@@ -140,7 +140,7 @@ export default function Home() {
   const checkDraw = () => {
     const check = Object.values(boardData).every((v) => v);
     setIsDraw(check);
-    if (check && !won) setModalTitle("Match Draw!!!");
+    if (check && !won) {setModalTitle("Match Draw!!!");setButtonText("New Game");};
   };
 
   const checkWinner = () => {
@@ -158,8 +158,8 @@ export default function Home() {
           setButtonText("New Game");
         }
         else if (!modalTitle && isComputer){
-          setModalTitle("🤖 Better luck next time! The computer won!");
-          setButtonText("Play Again")
+          setModalTitle("🤖The computer outsmarted you this time!");
+          setButtonText("Challenge it")
         }
         setIsPlayerTurn(false); // Stop player clicks after win
       }
@@ -185,6 +185,7 @@ export default function Home() {
     setModalTitle("");
     setGameStarted(false);
     setIsPlayerTurn(true);
+    setShowNames(false);
   };
 
   const startGame = () => {
@@ -207,6 +208,7 @@ export default function Home() {
     <div className="main-div">
       <Head>
         <title>Tic Tac Toe</title>
+        <link rel="icon" href="/180.png" />
       </Head>
       <h1>Tic Tac Toe</h1>
 
@@ -251,7 +253,6 @@ export default function Home() {
         <div className="game">
           <div className="game__menu">
             <p>{xTurn ? `${playerX}'s Turn (X)` : isComputer ? "Computer's Turn (O)" : `${playerO}'s Turn (O)`}</p>
-            <p>{`Game Won: ${won} Draw: ${isDraw}`}</p>
           </div>
 
           <div className="game__board">
